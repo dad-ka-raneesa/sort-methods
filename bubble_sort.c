@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include "sort.h"
 
-void print(int *array, int length){
-  FOR_I(0, length){
-    printf("%d ", array[i]);
-  }
-  printf("\n");
-}
-
 void bubble_sort(int *array, int length){
   int swap_count, temp;
   swap_count = 1;

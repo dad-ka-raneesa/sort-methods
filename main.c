@@ -18,7 +18,8 @@ int main(void){
   printf("\nSorted array : ");
   print_array(array1, 10);
 
-  int array2[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  // int array2[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  int array2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9};
   printf("\n\nOriginal array : ");
   print_array(array2, 10);
   bubble_sort(array2, 10);
