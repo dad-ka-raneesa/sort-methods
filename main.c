@@ -27,12 +27,12 @@ int main(void){
   printf("Sorted array : ");
   print_array_numbers(array1, 10);
 
-  char_ptr strings[] = {"hello", "he", "hell", "h"};
+  char_ptr strings1[] = {"hello", "he", "hell", "h"};
   printf("\nOriginal array : ");
-  print_array_strings(strings, 4);
+  print_array_strings(strings1, 4);
   printf("Sorted array : ");
-  selection_sort_strings(strings, 4);
-  print_array_strings(strings, 4);
+  selection_sort_strings(strings1, 4);
+  print_array_strings(strings1, 4);
 
 
   printf("\n\nBubble sort:\n");
@@ -43,5 +43,12 @@ int main(void){
   bubble_sort_numbers(array2, 10);
   printf("Sorted array : ");
   print_array_numbers(array2, 10);
+
+  char_ptr strings2[] = {"hello", "he", "hell", "h"};
+  printf("\nOriginal array : ");
+  print_array_strings(strings2, 4);
+  printf("Sorted array : ");
+  bubble_sort_strings(strings2, 4);
+  print_array_strings(strings2, 4);
   return 0;
 }

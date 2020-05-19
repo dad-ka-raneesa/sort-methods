@@ -9,5 +9,6 @@ typedef char *char_ptr;
 void selection_sort_numbers(int *array, int length);
 void selection_sort_strings(char_ptr *strings, int length);
 void bubble_sort_numbers(int *array, int length);
+void bubble_sort_strings(char_ptr *strings, int length);
 
 #endif
