@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "sort.h"
 
-void bubble_sort(int *array, int length){
+void bubble_sort_numbers(int *array, int length){
   int swap_count, temp;
   swap_count = 1;
   for(size_t i = 0; swap_count != 0; i++){
