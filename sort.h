@@ -5,5 +5,6 @@
 #define FOR_J(start, limit) for (size_t j = start; j < limit; j++)
 
 void selection_sort(int *array, int length);
+void bubble_sort(int *array, int length);
 
 #endif
