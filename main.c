@@ -14,5 +14,8 @@ int main(void){
   int array[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
   printf("Original array : ");
   print_array(array, 10);
+  selection_sort(array, 10);
+  printf("\nSorted array : ");
+  print_array(array, 10);
   return 0;
 }
