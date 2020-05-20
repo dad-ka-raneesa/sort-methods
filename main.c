@@ -1,18 +1,4 @@
-#include "sort_array_void.h"
-
-void print_array_numbers(int_ptr array, int length){
-  FOR_I(0, length){
-    printf("%d ", array[i]);
-  }
-  printf("\n");
-}
-
-void print_array_strings(char_ptr *strings, int length){
-  FOR_I(0, length){
-    printf("%s  ", strings[i]);
-  }
-  printf("\n");
-}
+#include "sort_arrays_void.h"
 
 Bool is_number_lesser_than(Object a, Object b)
 {
@@ -27,6 +13,20 @@ Bool is_char_lesser_than(Object a, Object b)
 Bool is_string_lesser_than(Object a, Object b)
 {
   return strcmp((char *)a, (char *)b) < 0;
+}
+
+void print_array_numbers(int_ptr array, int length){
+  FOR_I(0, length){
+    printf("%d ", array[i]);
+  }
+  printf("\n");
+}
+
+void print_array_strings(char_ptr *strings, int length){
+  FOR_I(0, length){
+    printf("%s  ", strings[i]);
+  }
+  printf("\n");
 }
 
 void print_number(Object data)
