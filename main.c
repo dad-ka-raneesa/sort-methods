@@ -50,5 +50,13 @@ int main(void){
   printf("Sorted array : ");
   bubble_sort_strings(strings2, 4);
   print_array_strings(strings2, 4);
+
+  printf("\n\nInsertion sort:\n");
+  int array3[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  printf("Original array : ");
+  print_array_numbers(array3, 10);
+  insertion_sort_numbers(array3, 10);
+  printf("Sorted array : ");
+  print_array_numbers(array3, 10);
   return 0;
 }
