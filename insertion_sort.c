@@ -4,7 +4,7 @@ void insertion_sort_numbers(int_ptr array, int length){
   int temp;
   FOR_I(1, length)
   {
-    for(int j = i; j > 0 && array[j] < array[j - 1]; j--)
+    for(size_t j = i; j > 0 && array[j] < array[j - 1]; j--)
     {
       // printf("inside\n");
       temp = array[j];
@@ -19,7 +19,7 @@ void insertion_sort_strings(char_ptr *strings, int length)
   char_ptr temp;
   FOR_I(1, length)
   {
-    for(int j = i; j > 0 && strcmp(strings[j], strings[j - 1]) < 0; j--)
+    for(size_t j = i; j > 0 && strcmp(strings[j], strings[j - 1]) < 0; j--)
     {
       // printf("inside\n");
       temp = strings[j];

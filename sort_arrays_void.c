@@ -28,3 +28,23 @@ void selection_sort_array_void(Array_ptr void_array, Predicate predicate)
     void_array->array[index] = temp;
   }
 }
+
+void bubble_sort_array_void(Array_ptr void_array, Predicate predicate)
+{
+  int swap_count = 1;
+  Object temp;
+ for(size_t i = 0; swap_count != 0; i++)
+  {
+    swap_count = 0;
+    FOR_J(1, void_array->length - i)
+    {
+      if((*predicate)(void_array->array[j], void_array->array[j - 1]))
+      {
+        swap_count++;
+        temp = void_array->array[j];
+        void_array->array[j] = void_array->array[j - 1];
+        void_array->array[j - 1] = temp;
+      }
+    }
+  }
+}
