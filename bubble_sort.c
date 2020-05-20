@@ -8,6 +8,7 @@ void bubble_sort_numbers(int *array, int length){
   for(size_t i = 0; swap_count != 0; i++){
     swap_count = 0;
     FOR_J(1, length - i){
+      // printf("inside\n");
       if(array[j - 1] > array [j]){
         swap_count++;
         temp = array[j];
@@ -24,6 +25,7 @@ void bubble_sort_strings(char_ptr *strings, int length){
   for(size_t i = 0; swap_count != 0; i++){
     swap_count = 0;
     FOR_J(1, length - i){
+      // printf("inside\n");
       if(strcmp(strings[j], strings[j - 1]) < 0){
         swap_count++;
         temp = strings[j];
