@@ -1,4 +1,4 @@
-#include "sort_arrays.h"
+#include "sort_array_void.h"
 
 void insertion_sort_numbers(int_ptr array, int length){
   int temp;
@@ -25,6 +25,19 @@ void insertion_sort_strings(char_ptr *strings, int length)
       temp = strings[j];
       strings[j] = strings[j - 1];
       strings[j - 1] = temp;
+    }
+  }
+}
+
+void insertion_sort_array_void(Array_ptr void_array, Predicate predicate)
+{
+  FOR_I(1, void_array->length)
+  {
+    for(int j = i; j > 0 && (*predicate)(void_array->array[j], void_array->array[j - 1]); j--)
+    {
+      Object temp = void_array->array[j];
+      void_array->array[j] = void_array->array[j - 1];
+      void_array->array[j - 1] = temp;
     }
   }
 }
