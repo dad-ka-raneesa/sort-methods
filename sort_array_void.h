@@ -25,6 +25,10 @@ typedef Array *Array_ptr;
 typedef Bool (*Predicate)(Object, Object);
 typedef void (*Displayer)(Object);
 
+Object create_int(int value);
+Object create_char(char value);
+int find_length(char *value);
+char *create_string(char *value);
 Array_ptr create_array_void(int);
 void selection_sort_array_void(Array_ptr void_array, Predicate predicate);
 void bubble_sort(Array_ptr void_array, Predicate predicate);
