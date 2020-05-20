@@ -25,6 +25,11 @@ Bool is_char_lesser_than(Object a, Object b)
   return *(char *)a < *(char *)b;
 }
 
+Bool is_string_lesser_than(Object a, Object b)
+{
+  return strcmp((char *)a, (char *)b) < 0;
+}
+
 void print_number(Object data)
 {
   printf("%d ", *(int *)data);
@@ -33,6 +38,11 @@ void print_number(Object data)
 void print_char(Object data)
 {
   printf("%c ", *(char *)data);
+}
+
+void print_string(Object data)
+{
+  printf("%s ", (char *)data);
 }
 
 void print_array_void(Array_ptr void_array, Displayer display)
@@ -58,8 +68,24 @@ Object create_char(char value)
   return (Object)element;
 }
 
+int find_length(char *value)
+{
+  int length = 0;
+  for (; value[length] != '\0'; length++)
+    ;
+  return length;
+}
+
+char *create_string(char *value)
+{
+  int length = find_length(value);
+  char *string = malloc(sizeof(char) * length);
+  memcpy(string, value, length);
+  return string;
+}
+
 Array_ptr create_array_numbers(void){
-  Array_ptr numbers = create_array(7);
+  Array_ptr numbers = create_array_void(7);
   numbers->array[0] = create_int(5);
   numbers->array[1] = create_int(10);
   numbers->array[2] = create_int(6);
@@ -68,6 +94,27 @@ Array_ptr create_array_numbers(void){
   numbers->array[5] = create_int(12);
   numbers->array[6] = create_int(5);
   return numbers;
+}
+
+Array_ptr create_array_chars(void){
+  Array_ptr chars = create_array_void(7);
+  chars->array[0] = create_char('h');
+  chars->array[1] = create_char('g');
+  chars->array[2] = create_char('e');
+  chars->array[3] = create_char('f');
+  chars->array[4] = create_char('d');
+  chars->array[5] = create_char('b');
+  chars->array[6] = create_char('a');
+  return chars;
+}
+
+Array_ptr create_array_strings(void){
+  Array_ptr strings = create_array_void(4);
+  strings->array[0] = create_string("hi");
+  strings->array[1] = create_string("hello");
+  strings->array[2] = create_string("hill");
+  strings->array[3] = create_string("hell");
+  return strings;
 }
 
 void perform_selection_sort(void){
@@ -94,6 +141,20 @@ void perform_selection_sort(void){
   selection_sort_array_void(numbers, &is_number_lesser_than);
   printf("Sorted array : ");
   print_array_void(numbers, print_number);
+
+  Array_ptr chars = create_array_chars();
+  printf("Original array : ");
+  print_array_void(chars, print_char);
+  selection_sort_array_void(chars, &is_char_lesser_than);
+  printf("Sorted array : ");
+  print_array_void(chars, print_char);
+
+  Array_ptr strings = create_array_strings();
+  printf("Original array : ");
+  print_array_void(strings, print_string);
+  selection_sort_array_void(strings, &is_string_lesser_than);
+  printf("Sorted array : ");
+  print_array_void(strings, print_string);
 }
 
 void perform_bubble_sort(void){

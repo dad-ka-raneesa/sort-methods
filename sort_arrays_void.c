@@ -1,6 +1,6 @@
 #include "sort_arrays_void.h"
 
-Array_ptr create_array(int length)
+Array_ptr create_array_void(int length)
 {
   Array_ptr new_array = malloc(sizeof(Array));
   new_array->length = length;

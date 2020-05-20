@@ -25,6 +25,6 @@ typedef Array *Array_ptr;
 typedef Bool (*Predicate)(Object, Object);
 typedef void (*Displayer)(Object);
 
-Array_ptr create_array(int);
+Array_ptr create_array_void(int);
 void selection_sort_array_void(Array_ptr void_array, Predicate predicate);
 #endif
