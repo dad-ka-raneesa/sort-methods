@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include "sort.h"
+#include "sort_arrays.h"
 
-void selection_sort_numbers(int *array, int length){
+void selection_sort_numbers(int_ptr array, int length){
   int index_of_min, temp;
   FOR_I(0, length){
     index_of_min = i;

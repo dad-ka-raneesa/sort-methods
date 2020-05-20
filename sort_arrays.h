@@ -1,6 +1,10 @@
 #ifndef __SORT_H_
 #define __SORT_H_
 
+#include <stdio.h>
+#include <string.h>
+
+typedef int *int_ptr;
 typedef char *char_ptr;
 
 #define FOR_I(start, limit) for (size_t i = start; i < limit; i++)

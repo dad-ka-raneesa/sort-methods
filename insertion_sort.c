@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include "sort.h"
+#include "sort_arrays.h"
 
-void insertion_sort_numbers(int *array, int length){
+void insertion_sort_numbers(int_ptr array, int length){
   int temp;
   FOR_I(1, length)
   {
