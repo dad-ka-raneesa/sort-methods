@@ -1,4 +1,4 @@
-#include "sort_arrays_void.h"
+#include "sort.h"
 
 void bubble_sort_numbers(int_ptr array, int length){
   int swap_count = 1;

@@ -1,4 +1,4 @@
-#include "sort_arrays_void.h"
+#include "sort.h"
 
 Bool is_number_lesser_than(Object a, Object b)
 {

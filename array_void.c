@@ -1,20 +1,20 @@
-#include "sort_arrays_void.h"
+#include "sort.h"
 
 Object create_int(int value)
 {
-  int *element = malloc(sizeof(int));
+  int_ptr element = malloc(sizeof(int));
   *element = value;
   return (Object)element;
 }
 
 Object create_char(char value)
 {
-  char *element = malloc(sizeof(char));
+  char_ptr element = malloc(sizeof(char));
   *element = value;
   return (Object)element;
 }
 
-int find_length(char *value)
+int find_length(char_ptr value)
 {
   int length = 0;
   for (; value[length] != '\0'; length++)
@@ -22,10 +22,10 @@ int find_length(char *value)
   return length;
 }
 
-char *create_string(char *value)
+char_ptr create_string(char_ptr value)
 {
   int length = find_length(value);
-  char *string = malloc(sizeof(char) * length);
+  char_ptr string = malloc(sizeof(char) * length);
   memcpy(string, value, length);
   return string;
 }

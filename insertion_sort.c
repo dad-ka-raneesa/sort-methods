@@ -1,4 +1,4 @@
-#include "sort_arrays_void.h"
+#include "sort.h"
 
 void insertion_sort_numbers(int_ptr array, int length){
   int temp;
