@@ -2,17 +2,17 @@
 
 Bool is_number_lesser_than(Object a, Object b)
 {
-  return *(int *)a < *(int *)b;
+  return *(int_ptr)a < *(int_ptr)b;
 }
 
 Bool is_char_lesser_than(Object a, Object b)
 {
-  return *(char *)a < *(char *)b;
+  return *(char_ptr)a < *(char_ptr)b;
 }
 
 Bool is_string_lesser_than(Object a, Object b)
 {
-  return strcmp((char *)a, (char *)b) < 0;
+  return strcmp((char_ptr)a, (char_ptr)b) < 0;
 }
 
 void print_array_numbers(int_ptr array, int length){
@@ -31,17 +31,17 @@ void print_array_strings(char_ptr *strings, int length){
 
 void print_number(Object data)
 {
-  printf("%d ", *(int *)data);
+  printf("%d ", *(int_ptr)data);
 }
 
 void print_char(Object data)
 {
-  printf("%c ", *(char *)data);
+  printf("%c ", *(char_ptr)data);
 }
 
 void print_string(Object data)
 {
-  printf("%s ", (char *)data);
+  printf("%s ", (char_ptr)data);
 }
 
 void print_array_void(Array_ptr void_array, Displayer display)
