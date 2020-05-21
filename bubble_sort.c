@@ -53,3 +53,30 @@ void bubble_sort_array_void(Array_ptr void_array, Predicate predicate)
     }
   }
 }
+
+void bubble_sort_linked_list(List_ptr list, Predicate predicate)
+{
+  Node_ptr p_walk = list->first;
+  Node_ptr next = NULL;
+  int swap_count = 1;
+  Object temp;
+
+  for(int i = 0; p_walk != NULL && swap_count != 0; i++)
+  {
+    swap_count = 0;
+    next = list->first->next;
+
+    for(int j = 1; j < list->length - i && next != NULL; j++)
+    {
+      if((*predicate)(next->element, next->prev->element))
+      {
+        swap_count++;
+        temp = next->element;
+        next->element = next->prev->element;
+        next->prev->element = temp;
+      }
+      next = next->next;
+    }
+    p_walk = p_walk->next;
+  }
+}  

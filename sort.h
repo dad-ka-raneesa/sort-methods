@@ -28,5 +28,6 @@ void bubble_sort_array_void(Array_ptr void_array, Predicate predicate);
 void insertion_sort_array_void(Array_ptr void_array, Predicate predicate);
 
 void selection_sort_linked_list(List_ptr list, Predicate predicate);
+void bubble_sort_linked_list(List_ptr list, Predicate predicate);
 
 #endif
