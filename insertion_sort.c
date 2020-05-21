@@ -45,18 +45,18 @@ void insertion_sort_array_void(Array_ptr void_array, Predicate predicate)
 void insertion_sort_linked_list(List_ptr list, Predicate predicate)
 {
   Node_ptr p_walk = list->first->next;
-  Node_ptr prev = NULL;
+  Node_ptr next = NULL;
   Object temp;
 
   while(p_walk != NULL)
   {
-    prev = p_walk;
-    while (prev->prev != NULL && (*predicate)(prev->element, prev->prev->element))
+    next = p_walk;
+    while (next->prev != NULL && (*predicate)(next->element, next->prev->element))
     {
-      temp = prev->element;
-      prev->element = prev->prev->element;
-      prev->prev->element = temp;
-      prev = prev->prev;
+      temp = next->element;
+      next->element = next->prev->element;
+      next->prev->element = temp;
+      next = next->prev;
     }
     p_walk = p_walk->next;
   }
