@@ -54,3 +54,31 @@ void selection_sort_array_void(Array_ptr void_array, Predicate predicate)
     void_array->array[index] = temp;
   }
 }
+
+void selection_sort_linked_list(List_ptr list, Predicate predicate)
+{
+  Node_ptr p_walk = list->first;
+  Node_ptr smaller = NULL;
+  Node_ptr next = NULL;
+  Object temp;
+  while (p_walk != NULL)
+  {
+    smaller = p_walk;
+    next = p_walk->next;
+
+    while (next != NULL)
+    {
+      if((*predicate)(next->element, smaller->element))
+      {
+        smaller = next;
+      }
+      next = next->next;
+    }
+
+    temp = p_walk->element;
+    p_walk->element = smaller->element;
+    smaller->element = temp;
+
+    p_walk = p_walk->next;
+  }
+}

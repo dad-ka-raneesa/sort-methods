@@ -53,6 +53,16 @@ void print_array_void(Array_ptr void_array, Displayer display)
   printf("\n");
 }
 
+void display_list(List_ptr list, Displayer displayer)
+{
+  Node_ptr p_walk = list->first;
+  while (p_walk != NULL)
+  {
+    (*displayer)(p_walk->element);
+    p_walk = p_walk->next;
+  }
+}
+
 Array_ptr create_array_numbers(void){
   Array_ptr numbers = create_array_void(7);
   numbers->array[0] = create_int(5);
@@ -124,6 +134,29 @@ void perform_selection_sort(void){
   selection_sort_array_void(strings2, &is_string_lesser_than);
   printf("Sorted array : ");
   print_array_void(strings2, print_string);
+
+  printf("\nSelection sort (linked list):\n");
+  List_ptr list = create_list();
+  add_to_list(list, create_int(8));
+  add_to_list(list, create_int(5));
+  add_to_list(list, create_int(9));
+  add_to_list(list, create_int(3));
+  printf("Original list : ");
+  display_list(list, &print_number);
+  selection_sort_linked_list(list, &is_number_lesser_than);
+  printf("\nSorted list : ");
+  display_list(list, &print_number);
+
+  List_ptr a = create_list();
+  add_to_list(a, create_string("hi"));
+  add_to_list(a, create_string("hello"));
+  add_to_list(a, create_string("hell"));
+  add_to_list(a, create_string("h"));
+  printf("Original list : ");
+  display_list(a, &print_string);
+  selection_sort_linked_list(a, &is_string_lesser_than);
+  printf("\nSorted list : ");
+  display_list(a, &print_string);
 }
 
 void perform_bubble_sort(void){

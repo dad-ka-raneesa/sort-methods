@@ -1,5 +1,6 @@
 #ifndef __ARRAYS_VOID_H_
 #define __ARRAYS_VOID_H_
+
 typedef void *Object;
 
 typedef enum
