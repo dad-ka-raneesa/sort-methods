@@ -31,4 +31,6 @@ void selection_sort_linked_list(List_ptr list, Predicate predicate);
 void bubble_sort_linked_list(List_ptr list, Predicate predicate);
 void insertion_sort_linked_list(List_ptr list, Predicate predicate);
 
+void quick_sort_numbers(int_ptr list, int start_index, int last_index);
+
 #endif

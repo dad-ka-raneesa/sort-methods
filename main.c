@@ -15,15 +15,19 @@ Bool is_string_lesser_than(Object a, Object b)
   return strcmp((char_ptr)a, (char_ptr)b) < 0;
 }
 
-void print_array_numbers(int_ptr array, int length){
-  FOR_I(0, length){
+void print_array_numbers(int_ptr array, int length)
+{
+  FOR_I(0, length)
+  {
     printf("%d ", array[i]);
   }
   printf("\n");
 }
 
-void print_array_strings(char_ptr *strings, int length){
-  FOR_I(0, length){
+void print_array_strings(char_ptr *strings, int length)
+{
+  FOR_I(0, length)
+  {
     printf("%s  ", strings[i]);
   }
   printf("\n");
@@ -46,7 +50,7 @@ void print_string(Object data)
 
 void print_array_void(Array_ptr void_array, Displayer display)
 {
-  FOR_I (0, void_array->length)
+  FOR_I(0, void_array->length)
   {
     (*display)(void_array->array[i]);
   }
@@ -63,7 +67,8 @@ void display_list(List_ptr list, Displayer displayer)
   }
 }
 
-Array_ptr create_array_numbers(void){
+Array_ptr create_array_numbers(void)
+{
   Array_ptr numbers = create_array_void(7);
   numbers->array[0] = create_int(5);
   numbers->array[1] = create_int(10);
@@ -75,7 +80,8 @@ Array_ptr create_array_numbers(void){
   return numbers;
 }
 
-Array_ptr create_array_chars(void){
+Array_ptr create_array_chars(void)
+{
   Array_ptr chars = create_array_void(7);
   chars->array[0] = create_char('h');
   chars->array[1] = create_char('g');
@@ -87,7 +93,8 @@ Array_ptr create_array_chars(void){
   return chars;
 }
 
-Array_ptr create_array_strings(void){
+Array_ptr create_array_strings(void)
+{
   Array_ptr strings = create_array_void(4);
   strings->array[0] = create_string("hi");
   strings->array[1] = create_string("hello");
@@ -96,15 +103,16 @@ Array_ptr create_array_strings(void){
   return strings;
 }
 
-void perform_selection_sort(void){
+void perform_selection_sort(void)
+{
   printf("Selection sort (arrays):\n");
-  int array1[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
-  // int array1[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
+  int array[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  // int array[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
   printf("Original array : ");
-  print_array_numbers(array1, 10);
-  selection_sort_numbers(array1, 10);
+  print_array_numbers(array, 10);
+  selection_sort_numbers(array, 10);
   printf("Sorted array : ");
-  print_array_numbers(array1, 10);
+  print_array_numbers(array, 10);
 
   char_ptr strings1[] = {"hello", "he", "hell", "h"};
   printf("Original array : ");
@@ -159,16 +167,17 @@ void perform_selection_sort(void){
   display_list(a, &print_string);
 }
 
-void perform_bubble_sort(void){
+void perform_bubble_sort(void)
+{
   printf("\n\nBubble sort:\n");
-  // int array2[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
-  // int array2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9};
-  int array1[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  // int array[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
+  // int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9};
+  int array[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
   printf("Original array : ");
-  print_array_numbers(array1, 10);
-  bubble_sort_numbers(array1, 10);
+  print_array_numbers(array, 10);
+  bubble_sort_numbers(array, 10);
   printf("Sorted array : ");
-  print_array_numbers(array1, 10);
+  print_array_numbers(array, 10);
 
   char_ptr strings1[] = {"hello", "he", "hell", "h"};
   printf("Original array : ");
@@ -223,10 +232,11 @@ void perform_bubble_sort(void){
   display_list(a, &print_string);
 }
 
-void perform_insertion_sort(void){
+void perform_insertion_sort(void)
+{
   printf("\n\nInsertion sort:\n");
-  // int array3[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9};
-  // int array3[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
+  // int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9};
+  // int array[] = {16,5,28,10,98,46,10,7,79,90,57,5,81,40,37,45,35,21,45,61,58,42,80,85,18,14,95,63,47,51,42,97,39,41,88,8,6,21,50,6,44,18,35,36,65,17,3,7,42,40,62,92,92,79,84,18,9,50,10,86,78,19,83,69,88,10,41,71,78,81,71,65,59,74,32,46,70,76,76,85,36,78,27,76,47,30,34,59,62,82,82,3,54,26,8,87,84,23,45,47};
   int array[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
   printf("Original array : ");
   print_array_numbers(array, 10);
@@ -287,9 +297,24 @@ void perform_insertion_sort(void){
   display_list(a, &print_string);
 }
 
-int main(void){
+void perform_quick_sort(void)
+{
+  printf("\n\nquick sort:\n");
+  // int array[] = {6, 7, 1, 2, 3, 4, 8, 9, 9, 5};
+  // int array[] = {16, 5, 28, 10, 98, 46, 10, 7, 79, 90, 57, 5, 81, 40, 37, 45, 35, 21, 45, 61, 58, 42, 80, 85, 18, 14, 95, 63, 47, 51, 42, 97, 39, 41, 88, 8, 6, 21, 50, 6, 44, 18, 35, 36, 65, 17, 3, 7, 42, 40, 62, 92, 92, 79, 84, 18, 9, 50, 10, 86, 78, 19, 83, 69, 88, 10, 41, 71, 78, 81, 71, 65, 59, 74, 32, 46, 70, 76, 76, 85, 36, 78, 27, 76, 47, 30, 34, 59, 62, 82, 82, 3, 54, 26, 8, 87, 84, 23, 45, 47};
+  int array[] = {3, 2, 7, 4, 9, 5, 1, 6, 8, 3};
+  printf("Original array : ");
+  print_array_numbers(array, 10);
+  quick_sort_numbers(array, 0, 9);
+  printf("\nSorted array : ");
+  print_array_numbers(array, 10);
+}
+
+int main(void)
+{
   perform_selection_sort();
   perform_bubble_sort();
   perform_insertion_sort();
+  perform_quick_sort();
   return 0;
 }
